@@ -2,6 +2,7 @@ import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
+import.meta.env
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -16,9 +17,13 @@ document.querySelector('#app').innerHTML = `
       <button id="counter" type="button"></button>
     </div>
     <p class="read-the-docs">
-      Click on the Vite logo to learn more
+      Click on the Vite logo to learn morewwd
     </p>
   </div>
 `
 
 setupCounter(document.querySelector('#counter'))
+
+const dogApikey = import.meta.env.VITE_DOG_API_KEY;
+
+console.log(dogApikey);
