@@ -24,6 +24,23 @@ document.querySelector('#app').innerHTML = `
 
 setupCounter(document.querySelector('#counter'))
 
+const DogPics = document. querySelector("pre")
 const dogApikey = import.meta.env.VITE_DOG_API_KEY;
 
 console.log(dogApikey);
+
+        fetch(dogApikey)
+        .then(response => {
+          if (!response.ok){
+            throw new Error(`HTTP error: ${response.status}`);
+          }
+           return response.text();
+        })
+        .then(text => {
+          console.log('Data received:' , text);
+        })
+        .catch((error) => {
+          console.log(`There was a problem with the fetch operation:`, error
+            )
+        });
+        
