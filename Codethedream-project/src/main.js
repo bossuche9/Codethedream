@@ -26,8 +26,9 @@ setupCounter(document.querySelector('#counter'))
 
 const DogPics = document. querySelector("pre")
 const dogApikey = import.meta.env.VITE_DOG_API_KEY;
+const dogurl = 'https://api.thedogapi.com/v1/breeds';
 
-console.log(dogApikey);
+console.log(dogurl);
 
         fetch(dogApikey)
         .then(response => {
