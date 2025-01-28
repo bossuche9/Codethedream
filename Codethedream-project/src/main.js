@@ -27,13 +27,31 @@ fetch(dogurl, {
 
 function displayDogs(dogString){
   const dogs = JSON.parse(dogString);
-  
-  for(let i =0; i < dogs.length; i++){
-    console.log(dogs[i]);
-  }
 
   
-}
+  for(let i =0; i < dogs.length-170; i++){
+    console.log(dogs[i]);
+    console.log(dogs[i].bred_for);
+    console.log(dogs[i].breed_group);
+    console.log(dogs[i].height);
+    console.log(dogs[i].height.imperial);
+    console.log(dogs[i].id);
+    console.log(dogs[i].image);
+    console.log(dogs[i].image.width);
+    console.log(dogs[i].image.height);
+    console.log(dogs[i].image.url);
+    console.log(dogs[i].life_span);
+    console.log(dogs[i].origin);
+    console.log(dogs[i].reference_image_id);
+    console.log(dogs[i].temperament);
+    console.log(dogs[i].weight);
+    console.log(dogs[i].weight.imperial);
+    console.log(dogs[i].weight.metric);
+
+  };
+
+  
+} 
       
 
 
