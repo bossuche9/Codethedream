@@ -2,7 +2,8 @@ import './style.css'
 import.meta.env
 
 const Doglist = document.querySelector("#doglist");
-console.log(Doglist);
+const DogPicture= document.querySelector("#dogpics");
+
 const dogApikey = import.meta.env.VITE_DOG_API_KEY;
 const dogurl = 'https://api.thedogapi.com/v1/breeds';
 
@@ -30,23 +31,29 @@ fetch(dogurl, {
 function displayDogs(dogString){
   const dogs = dogString;
 
-  for(let i =0; i < dogs.length-168; i++){
+  for(let i =0; i < dogs.length; i++){
    // console.log(dogs[i]);
-    //console.log(dogs[i].bred_for);
-   
     const dogName = document.createElement("p");
-    const dogImage = document.createElement("img");
-    const dogTemper = document.createElement("p");
+   
+   // const dogTemper = document.createElement("p");
 
     dogName.textContent = `Dog name: ${dogs[i].name}` ;
-    dogImage.setAttribute("id",dogs[i].image.id);
-    dogImage.setAttribute("src",`${dogs[i].image.url}`);
-    dogTemper.textContent = `Dog Temperament: ${dogs[i].temperament}` ;
+    
+   // dogTemper.textContent = `Dog Temperament: ${dogs[i].temperament}` ;
     Doglist.appendChild(dogName);
-    Doglist.appendChild(dogImage);
-    Doglist.appendChild(dogTemper);
+    
+  //  Doglist.appendChild(dogTemper);
   };
 
+  for(let j= 0; j <dogs.length-168; j++){
+    const dogImage = document.createElement("img");
+    dogImage.setAttribute("id",dogs[j].image.id);
+    dogImage.setAttribute("src",`${dogs[j].image.url}`);
+    DogPicture.appendChild(dogImage);
+  }
+
+  console.log(Doglist);
+  console.log(DogPicture);
 
 } 
      
