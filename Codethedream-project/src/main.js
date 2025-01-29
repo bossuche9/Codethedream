@@ -16,43 +16,39 @@ fetch(dogurl, {
   if (!response.ok){
     throw new Error(`HTTP error: ${response.status}`);
   }
-    return response.text();
+    return response.json();
 })
-.then(text => {
-  displayDogs(text);
- // console.log('Data received:' , text);
+.then(data => {
+  displayDogs(data);
 })
 .catch((error) => {
   console.log(`There was a problem with the fetch operation:`, error
     )
 });
 
-function displayDogs(dogString){
-  const dogs = JSON.parse(dogString);
 
+function displayDogs(dogString){
+  const dogs = dogString;
   
-  for(let i =0; i < dogs.length-160; i++){
+
+  for(let i =0; i < dogs.length-170; i++){
     console.log(dogs[i]);
     console.log(dogs[i].bred_for);
    
-    const dogData = document.createElement("p")
-    const dogImage = document.createElement("img")
-    dogData.textContent = `${dogs[i].name}` ;
+    const dogName = document.createElement("p");
+    const dogImage = document.createElement("img");
+    const dogTemper = document.createElement("p");
+    dogName.textContent = `Dog name: ${dogs[i].name}` ;
     dogImage.setAttribute("id",dogs[i].image.id);
-    dogImage.setAttribute("width",dogs[i].image.width );
-    dogImage.setAttribute("height",dogs[i].image.height );
-    dogImage.setAttribute("src",dogs[i].image.url);
+    dogImage.setAttribute("src",`${dogs[i].image.url}`);
+    dogTemper.textContent = `Dog Temperament: ${dogs[i].temperament}` ;
     console.log(dogImage);
-    Doglist.appendChild(dogData);
+    Doglist.appendChild(dogName);
     Doglist.appendChild(dogImage);
-
-
-   // console.log(dogs[i].weight.metric);
-
+    Doglist.appendChild(dogTemper);
   };
 
   console.log(Doglist);
 } 
       
-
 
