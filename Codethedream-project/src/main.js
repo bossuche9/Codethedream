@@ -1,7 +1,7 @@
 import './style.css'
 import.meta.env
 
-const Doglist = document.querySelector("#doglist");
+const Doglist = document.querySelector(".doglist");
 const DogPicture= document.querySelector("#dogpics");
 
 const dogApikey = import.meta.env.VITE_DOG_API_KEY;
@@ -33,7 +33,7 @@ function displayDogs(dogString){
 
   for(let i =0; i < dogs.length; i++){
    // console.log(dogs[i]);
-    const dogName = document.createElement("p");
+    const dogName = document.createElement("li");
    
    // const dogTemper = document.createElement("p");
 

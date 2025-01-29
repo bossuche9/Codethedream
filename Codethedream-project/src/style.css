@@ -42,15 +42,22 @@ header{
   
 }
 
+.navbar a:hover{
+  color: white;
+  text-decoration: underline;
+}
+
 h1{
   color: darkslateblue;
   text-align: center;
 }
-.background{
-  background-color: white;
-  background-size: cover;
-  
+
+h2{
+  color: darkslateblue;
+  text-align: center;
+  text-decoration: underline;
 }
+
 
 #dogpics{
   border:4px solid black ;
@@ -73,18 +80,16 @@ h1{
   border-radius: 10px; 
 }
 
-#doglist{
+#dogbox{
   border: 4px solid black ;
   display: flex;
   flex-direction: column;
   width: 320px;
-  height: 300px;
-  overflow: scroll;
-}
-
-#doglist p{
+  height: auto;
+  /*overflow: scroll;*/
+  margin-left: auto;
+  margin-right: auto;
   display: block;
-  margin-left: 100px; 
-  
   font-family: 'Faster One', cursive;
 }
+
