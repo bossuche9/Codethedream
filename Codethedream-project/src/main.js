@@ -1,14 +1,16 @@
 import './style.css'
 import.meta.env
 
-const DogPics = document. querySelector("pre")
+const Doglist = document.querySelector("#doglist");
+console.log(Doglist);
 const dogApikey = import.meta.env.VITE_DOG_API_KEY;
 const dogurl = 'https://api.thedogapi.com/v1/breeds';
 
 fetch(dogurl, {
   headers: {
     'x-api-key' : dogApikey
-  }
+  }, 
+  method: "GET"
 })
 .then(response => {
   if (!response.ok){
@@ -29,28 +31,27 @@ function displayDogs(dogString){
   const dogs = JSON.parse(dogString);
 
   
-  for(let i =0; i < dogs.length-170; i++){
+  for(let i =0; i < dogs.length-160; i++){
     console.log(dogs[i]);
     console.log(dogs[i].bred_for);
-    console.log(dogs[i].breed_group);
-    console.log(dogs[i].height);
-    console.log(dogs[i].height.imperial);
-    console.log(dogs[i].id);
-    console.log(dogs[i].image);
-    console.log(dogs[i].image.width);
-    console.log(dogs[i].image.height);
-    console.log(dogs[i].image.url);
-    console.log(dogs[i].life_span);
-    console.log(dogs[i].origin);
-    console.log(dogs[i].reference_image_id);
-    console.log(dogs[i].temperament);
-    console.log(dogs[i].weight);
-    console.log(dogs[i].weight.imperial);
-    console.log(dogs[i].weight.metric);
+   
+    const dogData = document.createElement("p")
+    const dogImage = document.createElement("img")
+    dogData.textContent = `${dogs[i].name}` ;
+    dogImage.setAttribute("id",dogs[i].image.id);
+    dogImage.setAttribute("width",dogs[i].image.width );
+    dogImage.setAttribute("height",dogs[i].image.height );
+    dogImage.setAttribute("src",dogs[i].image.url);
+    console.log(dogImage);
+    Doglist.appendChild(dogData);
+    Doglist.appendChild(dogImage);
+
+
+   // console.log(dogs[i].weight.metric);
 
   };
 
-  
+  console.log(Doglist);
 } 
       
 
