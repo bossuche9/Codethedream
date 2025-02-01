@@ -59,26 +59,24 @@ h2{
 }
 
 
-#dogpics{
-  border:4px solid black ;
+#dogpics {
+  border: 4px solid black;
   display: flex;
-  flex-direction: column;
-  overflow-y:scroll;
+  justify-content: center;
+  align-items: center;
   width: 300px;
   height: 300px;
-  position: absolute;
-  align-items: center;
+  background-color: white;
+}
 
-} 
 
 #dogpics img {
-  width: 300px;
-  height: 300px;
-  border: 4px solid black;
-  display: block;
-  object-fit: cover; 
-  border-radius: 10px; 
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
 }
+
 
 #dogbox{
   border: 4px solid black ;
@@ -93,3 +91,7 @@ h2{
   font-family: 'Faster One', cursive;
 }
 
+#dogNameField{
+  width: 200px;
+  height: 20px;
+}

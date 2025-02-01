@@ -3,9 +3,19 @@ import.meta.env
 
 const Doglist = document.querySelector(".doglist");
 const DogPicture= document.querySelector("#dogpics");
+const DogSearchField = document.getElementById("dogNameField");
+const btn =document.querySelector("button");
+const form =document.querySelector("form");
+
+
+btn.addEventListener("click", () => {
+  console.log("search field value is",DogSearchField.value);
+})
 
 const dogApikey = import.meta.env.VITE_DOG_API_KEY;
 const dogurl = 'https://api.thedogapi.com/v1/breeds';
+
+let allDogs = [];
 
 fetch(dogurl, {
   headers: {
@@ -20,7 +30,8 @@ fetch(dogurl, {
     return response.json();
 })
 .then(data => {
-  displayDogs(data);
+  allDogs = data;
+  displayDogsList();
 })
 .catch((error) => {
   console.log(`There was a problem with the fetch operation:`, error
@@ -28,33 +39,65 @@ fetch(dogurl, {
 });
 
 
-function displayDogs(dogString){
-  const dogs = dogString;
-
-  for(let i =0; i < dogs.length; i++){
-   // console.log(dogs[i]);
+function displayDogsList(){
+  for(let i =0; i < allDogs.length; i++){
+    console.log(allDogs[i].name);
     const dogName = document.createElement("li");
-   
-   // const dogTemper = document.createElement("p");
-
-    dogName.textContent = `Dog name: ${dogs[i].name}` ;
-    
-   // dogTemper.textContent = `Dog Temperament: ${dogs[i].temperament}` ;
+    dogName.textContent = `Dog name: ${allDogs[i].name}` ;
     Doglist.appendChild(dogName);
-    
-  //  Doglist.appendChild(dogTemper);
   };
+}
 
-  for(let j= 0; j <dogs.length-168; j++){
-    const dogImage = document.createElement("img");
-    dogImage.setAttribute("id",dogs[j].image.id);
-    dogImage.setAttribute("src",`${dogs[j].image.url}`);
-    DogPicture.appendChild(dogImage);
+
+
+btn.addEventListener("click", () => {
+  event.preventDefault();
+  const searchValue = DogSearchField.value.trim().toLowerCase();
+  const foundDog = allDogs.find(dog => dog.name.toLowerCase() === searchValue);
+  console.log(foundDog);
+
+    if (!foundDog){
+     
+      DogSearchField.setCustomValidity("That dogs is not part of the list")
+      DogSearchField.reportValidity();
+    }
+    else{
+     
+      DogSearchField.setCustomValidity("");
+      console.log(foundDog);
+      displayDogsPicture(foundDog);
+      DogSearchField.value = "";      
+    }
+});
+
+function displayDogsPicture(dog){
+  DogPicture.innerHTML = ""; // removes the old picture
+  if (!dog.image || !dog.image.url) {
+    DogPicture.textContent = "No image available for this breed.";
+    return;
   }
 
-  console.log(Doglist);
-  console.log(DogPicture);
+  const dogImage = document.createElement("img");
+  dogImage.setAttribute("src",dog.image.url);
+  console.log(dog.image.url);
+  dogImage.setAttribute("alt",dog.name);
+  DogPicture.append(dogImage);
+}
 
-} 
+
+  
+
+  
+   
+ 
+
+ 
+
+ 
+ 
+
+ 
+ 
+
      
 
