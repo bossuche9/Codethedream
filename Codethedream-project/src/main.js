@@ -5,7 +5,7 @@ const Doglist = document.querySelector(".doglist");
 const DogPicture= document.querySelector("#dogpics");
 const DogSearchField = document.getElementById("dogNameField");
 const btn =document.querySelector("button");
-const form =document.querySelector("form");
+const body =document.querySelector("body");
 
 
 btn.addEventListener("click", () => {
@@ -40,7 +40,7 @@ fetch(dogurl, {
 
 function displayDogsList(){
   for(let i =0; i < allDogs.length; i++){
-    console.log(allDogs[i].name);
+    console.log(allDogs[i]);
     const dogName = document.createElement("li");
     dogName.textContent = `Dog name: ${allDogs[i].name}` ;
     Doglist.appendChild(dogName);
@@ -60,6 +60,7 @@ btn.addEventListener("click", () => {
     else{
       DogSearchField.setCustomValidity("");
       displayDogsPicture(foundDog);
+      displayDogsTemp(foundDog);
       DogSearchField.value = "";      
     }
 });
@@ -75,6 +76,19 @@ function displayDogsPicture(dog){
   dogImage.setAttribute("src",dog.image.url);
   dogImage.setAttribute("alt",dog.name);
   DogPicture.append(dogImage);
+}
+
+function displayDogsTemp(dog){
+  const oldPara = document.querySelector("#dog-temperament");
+  if(oldPara){
+    oldPara.remove();
+  }
+
+  const para = document.createElement("p");
+  para.textContent="";
+  para.textContent = dog.temperament;
+  para.id = "dog-temperament"
+  body.appendChild(para);
 }
 
 
