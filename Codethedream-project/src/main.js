@@ -85,7 +85,6 @@ function displayDogsTemp(dog){
   }
 
   const para = document.createElement("p");
-  para.textContent="";
   para.textContent = dog.temperament;
   para.id = "dog-temperament"
   body.appendChild(para);
