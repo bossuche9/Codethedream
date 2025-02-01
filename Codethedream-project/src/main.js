@@ -38,7 +38,6 @@ fetch(dogurl, {
     )
 });
 
-
 function displayDogsList(){
   for(let i =0; i < allDogs.length; i++){
     console.log(allDogs[i].name);
@@ -49,29 +48,24 @@ function displayDogsList(){
 }
 
 
-
 btn.addEventListener("click", () => {
-  event.preventDefault();
+  event.preventDefault(); // prevents refreshing and lets image save.
   const searchValue = DogSearchField.value.trim().toLowerCase();
-  const foundDog = allDogs.find(dog => dog.name.toLowerCase() === searchValue);
-  console.log(foundDog);
+  const foundDog = allDogs.find(dog => dog.name.toLowerCase() === searchValue)
 
     if (!foundDog){
-     
       DogSearchField.setCustomValidity("That dogs is not part of the list")
       DogSearchField.reportValidity();
     }
     else{
-     
       DogSearchField.setCustomValidity("");
-      console.log(foundDog);
       displayDogsPicture(foundDog);
       DogSearchField.value = "";      
     }
 });
 
 function displayDogsPicture(dog){
-  DogPicture.innerHTML = ""; // removes the old picture
+  DogPicture.innerHTML = ""; // removes the old picture and prevents overflow
   if (!dog.image || !dog.image.url) {
     DogPicture.textContent = "No image available for this breed.";
     return;
@@ -79,7 +73,6 @@ function displayDogsPicture(dog){
 
   const dogImage = document.createElement("img");
   dogImage.setAttribute("src",dog.image.url);
-  console.log(dog.image.url);
   dogImage.setAttribute("alt",dog.name);
   DogPicture.append(dogImage);
 }
