@@ -50,6 +50,12 @@ header{
 h1{
   color: darkslateblue;
   text-align: center;
+  background-color: white;
+  border: 5px dotted black;
+  width: 500px;
+  /*position: relative;*/
+  justify-content: center;
+  margin: 0 auto;
 }
 
 h2{
@@ -73,6 +79,7 @@ h2{
   position:absolute;
   bottom: 400px;
   left: 850px;
+  margin: 0 auto;
   
 }
 
@@ -86,10 +93,11 @@ h2{
 
 
 #dogbox{
-  border: 4px solid black ;
+  border: 5px solid black ;
+  padding: 10px;
   display: block;
   background-color: white;
-  width: 320px;
+  width: 350px;
   height: 700px;
   overflow-y: scroll;
   display: block;
@@ -98,7 +106,7 @@ h2{
 
 .searchForm{
   position:absolute;
-  bottom: 310px;
+  bottom: 340px;
   left: 850px;
 }
 
@@ -106,6 +114,7 @@ h2{
   height: 40px;
   width:200px ;
   border-radius: 8px;
+  border: 5px solid black;
 }
 
 .searchForm button{
@@ -114,4 +123,14 @@ h2{
   height: 45px;
   border-radius: 8px;
   background-color: grey;
+  box-shadow: 0 9px #999;
+}
+
+.searchForm button:active{
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.searchForm button:hover{
+  cursor:pointer;
 }

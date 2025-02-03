@@ -15,7 +15,8 @@ btn.addEventListener("click", () => {
 const dogApikey = import.meta.env.VITE_DOG_API_KEY;
 const dogurl = 'https://api.thedogapi.com/v1/breeds';
 
-let allDogs = [];
+
+let allDogs ;
 
 fetch(dogurl, {
   headers: {
@@ -40,7 +41,7 @@ fetch(dogurl, {
 
 function displayDogsList(){
   for(let i =0; i < allDogs.length; i++){
-    console.log(allDogs[i]);
+
     const dogName = document.createElement("li");
     dogName.textContent = `Dog name: ${allDogs[i].name}` ;
     Doglist.appendChild(dogName);
@@ -85,14 +86,14 @@ function displayDogsTemp(dog){
   }
 
   const para = document.createElement("p");
-  para.textContent = dog.temperament;
+  para.textContent = `Known to be ${dog.temperament}`;
   para.id = "dog-temperament"
   body.appendChild(para);
 }
 
 
   
-
+console.log(allDogs);
   
    
  
