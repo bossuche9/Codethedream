@@ -1,19 +1,20 @@
 /* margin is the space be*/
 
-body{
-  background: white;
-  background-image: url("../images/dogBackground.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  color: black;
-  font-family: "Helvetica Neuve", Arial, Helvetica, sans-serif;
-  margin:0;
-  padding: 0;
-  
-  
-}
+  body{
+    background: white;
+    background-image: url("../images/dogBackground.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: black;
+    font-family: "Helvetica Neuve", Arial, Helvetica, sans-serif;
+    margin:0;
+    padding: 0;
+    
+    
+  }
+
 
 header{
   background-color:black;
@@ -68,34 +69,47 @@ h2{
 }
 
 
+
+#dogframe{
+  border: 10px dotted black;
+  width: 510px;
+  height: 550px;
+  position: relative;
+  left: 850px;
+  bottom: 450px;
+  background-color: white;
+}
+
+
 #dogpics {
   border: 4px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 500px;
-  height: 500px;
+  height: 400px;
   background-color: white;
-  position:absolute;
+  margin-bottom: 50px;
+ /* position:absolute;
   bottom: 400px;
   left: 850px;
-  margin: 0 auto;
+  margin: 0 auto;*/
   
 }
-
 
 #dogpics img {
   width: 100%;
   height: auto;
   max-height: 100%;
   object-fit: contain;
+  border: 4px solid black;
+ 
 }
 
 
 #dogbox{
   border: 5px solid black ;
   padding: 10px;
-  display: block;
   background-color: white;
   width: 350px;
   height: 700px;
@@ -104,10 +118,15 @@ h2{
   font-family: 'Faster One', cursive;
 }
 
-.searchForm{
+
+
+#dog-temperament p{
+  border: 5px solid black;
+  margin-top: 100px;
+  margin-bottom: 100px;
   position:absolute;
-  bottom: 340px;
-  left: 850px;
+  top: 330px;
+  background-color: white;
 }
 
 .searchForm input{
@@ -133,4 +152,10 @@ h2{
 
 .searchForm button:hover{
   cursor:pointer;
+}
+
+.searchForm{
+  margin-top: 50px;
+  position: relative;
+  top: 7%;
 }
