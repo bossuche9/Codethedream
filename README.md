@@ -9,8 +9,15 @@ you will have to pull this into a folder/ Download Code as a zip(green code butt
 
 I will advise using V.S Code/ a linux terminal .
 
-if you do not have a linus(wsl)/ bash installed, go to git-scm.com/downnloads. downloads for your OS(mostly likely 64 bit).
+if you do not have a linus(wsl)/ bash installed, go to git-scm.com/downnloads. Downloads for your OS(mostly likely 64 bit).
+
+open trhe file ending with bit.exe that downlaod and install.
+
+There will different customisation for git whilke installking, or main objective is to use it as a terminal to run our cde
 
 after pulling/ downloading.
-
+In windows powershell
+cd into where you pulled/ downloaded the folder. then in
+cd Codethedream-main
 cd Codethedream-project
+code .
