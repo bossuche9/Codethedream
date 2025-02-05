@@ -54,6 +54,8 @@ btn.addEventListener("click", () => {
   const searchValue = dogSearchField.value.trim().toLowerCase();
   const foundDog = allDogs.find(dog => dog.name.toLowerCase() === searchValue)
 
+  console.log ("Found Dog Object:", foundDog);
+
     if (!foundDog){
       dogSearchField.setCustomValidity("That dogs is not part of the list")
       dogSearchField.reportValidity();
@@ -66,18 +68,39 @@ btn.addEventListener("click", () => {
     }
 });
 
-function displayDogsPicture(dog){
-  dogPicture.innerHTML = ""; // removes the old picture and prevents overflow
-  if (!dog.image || !dog.image.url) {
+function displayDogsPicture(dog) {
+  dogPicture.innerHTML = ""; // Clears previous image
+  
+  if (!dog.reference_image_id) {
+    console.log(`No image ID available for ${dog.name}`);
     dogPicture.textContent = "No image available for this breed.";
     return;
   }
 
-  const dogImage = document.createElement("img");
-  dogImage.setAttribute("src",dog.image.url);
-  dogImage.setAttribute("alt",dog.name);
-  dogPicture.append(dogImage);
+  // Fetch image separately using reference_image_id
+  fetch(`https://api.thedogapi.com/v1/images/${dog.reference_image_id}`, {
+    headers: { "x-api-key": dogApikey }
+  })
+  .then(response => response.json())
+  .then(imageData => {
+    if (!imageData.url) {
+      console.log(`No image found for ID ${dog.reference_image_id}`);
+      dogPicture.textContent = "No image available for this breed.";
+      return;
+    }
+
+    const dogImage = document.createElement("img");
+    dogImage.setAttribute("src", imageData.url);
+    console.log(`Fetched image URL: ${imageData.url}`);
+    dogImage.setAttribute("alt", dog.name);
+    dogPicture.append(dogImage);
+  })
+  .catch(error => {
+    console.error("Error fetching image:", error);
+    dogPicture.textContent = "Image could not be loaded.";
+  });
 }
+
 
 function displayDogsTemp(dog) {
   temperamentContainer.innerHTML = ""; // Clears old content
