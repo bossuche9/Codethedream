@@ -3,11 +3,11 @@ Code the dream project testing HTML, CSS and JavaScript skills
 
 # How to set up
 
-this was developed in a linux environment
+This was developed in a linux environment
 
-you will have to pull this into a folder/ Download Code as a zip(green code button with a drop down arrow).
+You will have to pull this into a folder/ Download Code as a zip(green code button with a drop down arrow).
 
-I will advise using github codespaces/V.S Code/ a linux terminal .
+I will advise using github codespaces(highly recommended for easy set up)/V.S Code/ a linux terminal .
 
 This app devDependencies":
     vite: 6.0.11
@@ -23,7 +23,7 @@ In the terminal
 cd into where you pulled/ downloaded the folder. then
  enter cd Codethedream-main
  then cd Codethedream-project
-enter npm install , to get all dependencies listed in package.json.
+ run npm install in the terminal , to get all dependencies listed in package.json.
 
 Hopefully, you should see something like,but not exactly :
 added 11 packages, and audited 12 packages in 856ms
