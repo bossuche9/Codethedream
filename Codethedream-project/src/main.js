@@ -32,7 +32,7 @@ fetch(dogurl, {
 })
 .then(data => {
   allDogs = data;
-  localStorage.setItem("dogsData", JSON.stringify(data));
+  localStorage.setItem("dogsData", JSON.stringify(data)); // store locally to use on dog details page
   displayDogsList();
 })
 .catch((error) => {
@@ -60,6 +60,7 @@ btn.addEventListener("click", () => {
     if (!foundDog){
       dogSearchField.setCustomValidity("That dogs is not part of the list")
       dogSearchField.reportValidity();
+      dogSearchField.value = ""; 
     }
     else{
       dogSearchField.setCustomValidity("");
@@ -121,8 +122,6 @@ function displayDogsTemp(dog) {
 
 
 
-  
-console.log(allDogs);
   
    
  
