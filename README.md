@@ -7,7 +7,7 @@ This was developed in a linux environment
 
 You will have to pull this into a folder/ Download Code as a zip(green code button with a drop down arrow).
 
-I will advise using github codespaces(highly recommended for easy set up)/V.S Code/ a linux terminal .
+I will advise using github codespaces(highly recommended for easy set up. accessed by pressing the green code button in the repository)/V.S Code/ a linux terminal .
 
 This app devDependencies":
     vite: 6.0.11
