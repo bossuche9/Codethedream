@@ -75,9 +75,12 @@ h2{
   width: 510px;
   height: 550px;
   position: relative;
-  left: 850px;
-  bottom: 450px;
+  left: 550px;
+  bottom: 750px;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 
@@ -155,7 +158,26 @@ h2{
 }
 
 .searchForm{
-  margin-top: 50px;
+
   position: relative;
   top: 7%;
+}
+
+
+.tablecontainer{
+ 
+  
+}
+
+.dogtable{
+  border-collapse: collapse;
+  background-color: white;
+  overflow-y: scroll;
+  border: 5px solid black
+}
+
+td,
+th {
+  border: 1px solid black;
+  padding: 10px 20px;
 }
