@@ -17,16 +17,16 @@ document.addEventListener("DOMContentLoaded", () => {
     for(let i = 0; i < dogs.length ; i++){
       const dogRow = document.createElement("tr");
       dogTable.appendChild(dogRow);
-      const dogData1 = document.createElement("td");
-      const dogData2  = document.createElement("td");
-      const dogData3 =  document.createElement("td");
+      const dogName = document.createElement("td");
+      const dogWeight  = document.createElement("td");
+      const dogLifeSpan =  document.createElement("td");
 
-      dogData1.textContent = dogs[i].name;
-      dogData2.textContent =  `${dogs[i].weight.imperial} lbs / ${dogs[i].weight.metric} kg`;
-      dogData3.textContent =  dogs[i].life_span;
-      dogRow.append(dogData1);
-      dogRow.append(dogData2);
-      dogRow.append(dogData3);
+      dogName.textContent = dogs[i].name;
+      dogWeight.textContent =  `${dogs[i].weight.imperial} lbs / ${dogs[i].weight.metric} kg`;
+      dogLifeSpan.textContent =  dogs[i].life_span;
+      dogRow.append(dogName);
+      dogRow.append(dogWeight);
+      dogRow.append(dogLifeSpan);
     }
 
   }
