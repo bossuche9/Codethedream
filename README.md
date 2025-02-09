@@ -31,9 +31,9 @@ added 11 packages, and audited 12 packages in 856ms
 3 packages are looking for funding
   run `npm fund` for details.
 
-  Now run `npm run` dev
+  Now run `npm run dev`
 
-  and click on the  Local: htttps:{link}.
+  and click on the  Local: htttps:{link} in the terminal.
 
   There is a search bar that can be used to find images of the dog on the first page and a dog details page showing the details of the dog like weight and LifeSpan.
 
