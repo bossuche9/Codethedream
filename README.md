@@ -1,4 +1,4 @@
-# Codethedreame
+# Code the dream Project using the Dog API
 Code the dream project testing HTML, CSS and JavaScript skills
 
 # How to set up
