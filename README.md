@@ -21,9 +21,9 @@ There will be different customisation for git while installing, or main objectiv
 after pulling/ downloading/ using git hub codespace.
 In the terminal
 cd into where you pulled/ downloaded the folder. then
- enter cd Codethedream-main
- then cd Codethedream-project
- run npm install in the terminal , to get all dependencies listed in package.json.
+ enter `cd Codethedream-main`
+ then `cd Codethedream-project`
+ run `npm install` in the terminal , to get all dependencies listed in package.json.
 
 Hopefully, you should see something like,but not exactly :
 added 11 packages, and audited 12 packages in 856ms
@@ -31,7 +31,7 @@ added 11 packages, and audited 12 packages in 856ms
 3 packages are looking for funding
   run `npm fund` for details.
 
-  Now run npm run dev
+  Now run `npm run` dev
 
   and click on the  Local: htttps:{link}.
 
